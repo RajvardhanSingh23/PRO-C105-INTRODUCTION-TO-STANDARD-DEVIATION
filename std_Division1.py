@@ -2,7 +2,7 @@ import csv
 import pandas as pd
 import plotly.express as px
 import math
-with open('data1.csv',newline='') as f:
+with open('data2.csv',newline='') as f:
     reader=csv.reader(f) 
     file_data=list(reader)
 file_data.pop(0)
