@@ -7,7 +7,7 @@ totalMarks=0
 totalEnteries=len(file_data)
 print(file_data)
 for marks in file_data:
-    totalMarks+=float(marks[0])
+    totalMarks+=int(marks[0])
 mean=totalMarks/totalEnteries
 print('Mean is',mean)
 square_list=[]
