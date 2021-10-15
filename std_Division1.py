@@ -9,7 +9,7 @@ file_data.pop(0)
 totalMarks=0
 totalEnteries=len(file_data)
 for marks in file_data:
-    totalMarks+=float(marks[1])
+    totalMarks+=int(marks[1])
 mean=totalMarks/totalEnteries
 print('Mean is',mean)
 df=pd.read_csv('data1.csv')
