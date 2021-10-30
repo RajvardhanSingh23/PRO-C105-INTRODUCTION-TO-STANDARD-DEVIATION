@@ -20,15 +20,3 @@ fig=px.scatter(df,x='Student Number',y='Marks')
 fig.update_layout(shapes=[dict(type='line',y0=mean,y1=mean,x0=0,x1=totalEnteries)])
 fig.update_yaxes(rangemode='tozero')
 fig.show()
-
-square_list=[]
-for number in file_data:
-    a=int(number[1])-mean
-    a=a**2
-    square_list.append(a)
-sum=0
-for i in square_list:
-    sum+=i
-result=sum/totalEnteries
-stdDeviation=math.sqrt(result)
-print (stdDeviation)
