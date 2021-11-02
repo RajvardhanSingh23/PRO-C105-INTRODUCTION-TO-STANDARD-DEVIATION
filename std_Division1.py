@@ -1,22 +1,33 @@
-import csv
-import pandas as pd
-import plotly.express as px
+
 import math
-with open('data2.csv',newline='') as f:
-    reader=csv.reader(f) 
-    file_data=list(reader)
+
+import csv
+with open('data.csv', newline='') as f:
+    reader = csv.reader(f)
+    file_data = list(reader)
+
+
 data = file_data[0]
-# file_data.pop(0)
-totalMarks=0
-totalEnteries=len(file_data)
-for marks in data:
-    # print(marks)
-    totalMarks=totalMarks + int(marks)
-    print(totalMarks)
-mean=totalMarks/totalEnteries
-print('Mean is',mean)
-df=pd.read_csv('data2.csv')
-fig=px.scatter(df,x='Student Number',y='Marks')
-fig.update_layout(shapes=[dict(type='line',y0=mean,y1=mean,x0=0,x1=totalEnteries)])
-fig.update_yaxes(rangemode='tozero')
-fig.show()
+
+
+def mean(data):
+    n= len(data)
+    total =0
+    for x in data:
+        total += int(x)
+
+    mean = total / n
+    return mean
+
+squared_list= []
+for number in data:
+    a = int(number) - mean(data)
+    a= a**2
+    squared_list.append(a)
+sum =0
+for i in squared_list:
+    sum =sum + i
+result = sum/ (len(data)-1)
+
+std_deviation = math.sqrt(result)
+print(std_deviation)
