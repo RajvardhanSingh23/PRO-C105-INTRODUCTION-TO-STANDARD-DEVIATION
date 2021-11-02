@@ -2,7 +2,7 @@
 import math
 
 import csv
-with open('data.csv', newline='') as f:
+with open('data2.csv', newline='') as f:
     reader = csv.reader(f)
     file_data = list(reader)
 
